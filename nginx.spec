@@ -32,6 +32,7 @@ BuildRequires: pcre-devel
 BuildRequires: perl
 %if 0%{?suse_version}
 BuildRequires: libopenssl-devel
+BuildRequires: GeoIP-devel
 Requires(pre): pwdutils
 %else
 BuildRequires: openssl-devel
@@ -82,6 +83,7 @@ not stripped version of nginx build with the debugging log support
         --with-http_random_index_module \
         --with-http_secure_link_module \
         --with-http_stub_status_module \
+        --with-http_geoip_module \
         --with-mail \
         --with-mail_ssl_module \
         --with-file-aio \
