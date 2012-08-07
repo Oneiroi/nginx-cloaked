@@ -30,9 +30,9 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires: zlib-devel
 BuildRequires: pcre-devel
 BuildRequires: perl
+BuildRequires: GeoIP-devel
 %if 0%{?suse_version}
 BuildRequires: libopenssl-devel
-BuildRequires: GeoIP-devel
 Requires(pre): pwdutils
 %else
 BuildRequires: openssl-devel
