@@ -6,7 +6,7 @@
 Summary: high performance web server
 Name: nginx
 Version: 1.2.2
-Release: 1%{?dist}.ngx
+Release: 2%{?dist}.ngx
 Vendor: nginx inc.
 URL: http://nginx.org/
 
@@ -37,7 +37,6 @@ Requires(pre): pwdutils
 %else
 BuildRequires: openssl-devel
 Requires: initscripts >= 8.36
-Requires: GeoIP
 Requires(pre): shadow-utils
 Requires(post): chkconfig
 %endif
@@ -121,6 +120,7 @@ make %{?_smp_mflags}
         --with-http_random_index_module \
         --with-http_secure_link_module \
         --with-http_stub_status_module \
+        --with-http_geoip_module \
         --with-mail \
         --with-mail_ssl_module \
         --with-file-aio \
@@ -253,6 +253,9 @@ if [ $1 -ge 1 ]; then
 fi
 
 %changelog
+* Tue Aug 7 2012 David Busby <oneiroi@fedoraproject.org> 1.2.2-2
+- Added geoip module, updated spec accordingly, repackage of upstream 1.2.2-1
+
 * Tue Jul  3 2012 Sergey Budnevitch <sb@nginx.com>
 - 1.2.2
 
