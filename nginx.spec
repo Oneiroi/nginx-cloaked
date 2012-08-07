@@ -37,6 +37,7 @@ Requires(pre): pwdutils
 %else
 BuildRequires: openssl-devel
 Requires: initscripts >= 8.36
+Requires: GeoIP
 Requires(pre): shadow-utils
 Requires(post): chkconfig
 %endif
